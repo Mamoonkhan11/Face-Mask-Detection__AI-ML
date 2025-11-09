@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Face Mask Detection </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1> Real-Time Face Mask Detection</h1>
+    <img src="{{ url_for('video') }}" id="videoFeed" alt="Video Stream">
+
+    <button id="stopBtn" onclick="stopCamera()">Exit Page</button>
+  </div>
+
+  <footer>
+    © 2025 Face Mask Detection | Developed using Flask & OpenCV
+  </footer>
+
+  <script>
+    async function stopCamera() {
+      try {
+        const response = await fetch('/stop', { method: 'POST' });
+        const msg = await response.text();
+        alert(msg);
+        window.location.href = '/exit';
+      } catch (error) {
+        alert(' Error stopping the camera!');
+      }
+    }
+  </script>
+</body>
+</html>
