@@ -122,7 +122,7 @@ http://127.0.0.1:5000
 ## Sound Alert System
 
 * Plays an alert when **“No Mask”** is detected.
-* Interval between alerts: **1.5 seconds** (configurable in `utils.py`).
+* Interval between alerts: **2.5 seconds** (configurable in `utils.py`).
 * You can replace alert sound with your custom `.wav` file in `/static/alert.wav`.
 
 ---
